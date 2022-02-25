@@ -11,7 +11,23 @@ function Persona(nombre, edad, calificación){
   }
     var ficha1 = new Persona("Luz","18","9");
       ficha1.metodo1();
-  
+
+    var ficha2 = new Persona("Luis","19","7");
+      ficha2.metodo1();
+
+    var ficha3 = new Persona("Lisa","17","6");
+      ficha3.metodo1();
+
+    var ficha4 = new Persona("Tulio","19","8");
+      ficha4.metodo1();
+
+    var ficha5 = new Persona("Héctor","20","8");
+      ficha5.metodo1();
+    
+    var ficha6 = new Persona("Susana","17","9");
+      ficha6.metodo1();
+
+      
   //OBJETO ESTUDIANTE
   function Estudiante(curso, grupo){
     this.curso=   curso;
@@ -38,20 +54,49 @@ function Persona(nombre, edad, calificación){
   
   /* ------------------------------------------------------------ */
   
-  var datos=[
-    { nombre: "Melina", apellido: "Liz", },
-    { nombre: "Romina"},
-    { nombre: "José"},
-    { nombre: "Raúl"},
-  ];
+  function Grupo(Profesor, Calificación, Estudiante){
+    this.profesor =  profesor;
+    this.calificación = calificación;
+    this.estudiantes = estudiante;
+    this.metodo4=     function asignar(){
+        document.write("Profesor: " + this.profesor + "<br>" +
+            "Calificación: " + this.calificación + "<br>" + "Estudiante: " + this.estudiante
+            + "<br>");
+    };
+}
+
+    var arreglo = [
+      {
+        nombre: "Luz",
+       calificación: 7
+      },
+      {
+        nombre: "Luis",
+        calificación: 7
+      },
+      {
+        nombre: "Lisa",
+        calificación: 6
+      },
+      {
+        nombre: "Tulio",
+        calificación: 8
+      },
+      {
+        nombre: "Héctor",
+        calificación: 8
+      },
+      {
+        nombre: "Susana",
+        calificación: 9
+      }
+    ];
+    
+      var sumatoriaObjeto = arreglo.reduce(function(acumulador, siguienteValor){
+        return {
+          calificación: acumulador.calificación + siguienteValor.calificación
+        };
+      }, {calificación: 0}); //Si no hay nada, regresamos un objeto con calificación = 0. No hay necesidad de devolver el nombre, pues no es necesario
+      
+      var promediocalificación = sumatoriaObjeto.edad / arreglo.length;
   
-  var container=document.getElementById("contenedor");
-  datos.forEach(function(element,index,array){
-    var divContenedor=document.createElement("div");
-    for(var prop in element){
-      var pContenedor = document.createElement("p");
-      pContnedor.innerHTML=prop + ":" + element[prop];
-      divContenedor.appendChild(pContnedor);
-    }
-    container.appendChild(divContenedor)
-  });
