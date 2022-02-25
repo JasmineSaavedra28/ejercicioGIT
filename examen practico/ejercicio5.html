@@ -1,12 +1,12 @@
 //OBJETO PERSONA
-function Persona(nombre, edad, clasificación){
+function Persona(nombre, edad, calificación){
     this.nombre=  nombre;
     this.edad=    edad;
-    this.clasificación=  clasificación;
+    this.calificación=  calificación;
     this.metodo1= function obtDetalles(){
       document.write("Nombre: " + this.nombre + "<br>" + 
                      "Edad: " + this.edad + "<br>" + 
-                     "Clasificación: " + this.clasificación + "<br>");
+                     "Calificación: " + Math.floor(Math.random()*10) + "<br>");
     }; 
   }
     var ficha1 = new Persona("Luz","18","9");
@@ -33,7 +33,7 @@ function Persona(nombre, edad, clasificación){
                        "Nivel: " + this.nivel+ "<br>");
     };
   }
-    var ficha3 = new Profesor("Html","Básico");
+    var ficha3 = new Profesor("JS","Básico");
       ficha3.metodo3();
   
   /* ------------------------------------------------------------ */
